@@ -1,0 +1,11 @@
+{
+  "extension" : {
+    "identifier" : "panic.PHP",
+    "name" : "PHP"
+  },
+  "extensionTemplate" : "phpDebug",
+  "extensionValues" : {
+    "php.debug.localSourceRoot" : "public",
+    "php.debug.stopOnEntry" : false
+  }
+}
