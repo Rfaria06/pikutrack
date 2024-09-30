@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    container_name: pikutrack_db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DATABASE: ${DB_DATABASE}
