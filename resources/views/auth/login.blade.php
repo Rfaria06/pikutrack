@@ -1,32 +1,23 @@
-<!-- resources/views/auth/login.blade.php -->
 <x-guest-layout>
     <x-slot name="title">
         Pikutrack | Login
     </x-slot>
 
-    <h1>Hi</h1>
-
-    <!-- Fortify login form here -->
-    <form method="POST" action="{{route('login')}}">
+    <form method="POST" action="{{route('login')}}" class="mx-auto flex flex-col gap-3 w-full">
         @csrf
 
-        <!-- Email Address -->
-        <div>
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" required autofocus>
-        </div>
+        <label class="input input-bordered flex items-center gap-2">
+            <i class="fa-solid fa-mail"></i>
+            <input id="email" type="email" name="email" placeholder="Email" required autofocus>
+        </label>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <label for="password">Password</label>
-            <input id="password" type="password" name="password" required>
-        </div>
+        <input id="password" type="password" name="password" placeholder="Password" class="input input-bordered" required>
 
         <!-- Remember Me -->
         <div class="mt-4">
             <label for="remember_me">
                 <input type="checkbox" id="remember_me" name="remember">
-                Remember Me
+                Remember Me <i class="fa-solid fa-comment"></i>
             </label>
         </div>
 
