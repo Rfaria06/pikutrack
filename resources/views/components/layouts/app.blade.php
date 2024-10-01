@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="{{str_replace('_', '-', app()->getLocale())}}">
+<html lang="{{str_replace('_', '-', app()->getLocale())}}" data-theme="synthwave">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.scss'])
 
 
-        <title>{{$title ?? 'Page Title'}}</title>
+    <title>{{$title ?? 'Pikutrack'}}</title>
 
 </head>
 
-<body class="text-3xl font-bold underline">
-    {{$slot}}
+<body class="overflow-x-hidden overflow-y-auto">
+    {{-- navbar --}}
+    <x-container>{{$slot}}</x-container>
 </body>
 
 </html>
