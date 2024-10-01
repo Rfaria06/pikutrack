@@ -10,7 +10,7 @@
         <title>{{$title ?? 'Pikutrack'}}</title>
 </head>
 
-<body>
+<body class="overflow-x-hidden overflow-y-auto">
     <livewire:nav.guest.guest-navbar />
     <x-container>{{$slot}}</x-container>
 </body>
