@@ -6,8 +6,14 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
-    public function render()
+    public $expenses = [];
+
+    public function mount()
     {
-        return view('livewire.dashboard');
+        $this->expenses = auth()
+            ->user()
+            ->expenses()
+            ->latest('date')
+            ->get();
     }
 }

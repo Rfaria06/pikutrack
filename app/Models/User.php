@@ -46,4 +46,9 @@ class User extends Authenticatable
             'user_type' => UserType::class,
         ];
     }
+
+    public function expenses()
+    {
+        return $this->hasMany(Expense::class);
+    }
 }

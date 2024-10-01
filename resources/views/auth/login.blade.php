@@ -29,9 +29,8 @@
 
         <!-- Submit Button with Spinner -->
         <div class="mt-4 flex justify-end">
-            <button type="submit" class="btn btn-primary flex items-center justify-center gap-2" id="submit-btn">
-                <span id="submit-text">Login</span>
-                <span id="spinner" class="loading loading-spinner loading-md hidden"></span>
+            <button type="submit" class="btn btn-primary">
+                Login
             </button>
         </div>
 
@@ -48,15 +47,4 @@
     </form>
 
 </main>
-
-    <!-- JavaScript to handle spinner -->
-    <script>
-        function showSpinner(event) {
-            // Prevent the form from submitting multiple times
-            event.target.querySelector('button[type="submit"]').disabled = true;
-
-            // Show the spinner and hide the text
-            document.getElementById('spinner').classList.remove('hidden');
-        }
-    </script>
 </x-guest-layout>
