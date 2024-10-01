@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->integer('user_type')->default(UserType::NORMAL);
+            $table->unsignedBigInteger('spending_limit')->default(35000);
             $table->timestamps();
         });
 

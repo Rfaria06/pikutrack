@@ -1,3 +1,4 @@
+<!-- resources/views/components/guest-layout.blade.php -->
 <!DOCTYPE html>
 <html lang="{{str_replace('_', '-', app()->getLocale())}}">
 
@@ -6,12 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
 
-
-        <title>{{$title ?? 'Page Title'}}</title>
-
+        <title>{{$title ?? 'Pikutrack'}}</title>
 </head>
 
-<body class="text-3xl font-bold underline">
+<body>
     {{$slot}}
 </body>
 

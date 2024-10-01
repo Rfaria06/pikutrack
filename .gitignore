@@ -21,3 +21,6 @@ yarn-error.log
 /.zed
 
 .DS_Store
+
+# Using bun as package manager, so ignore npm lockfile
+package-lock.json
