@@ -22,4 +22,11 @@ class ProfileButton extends Component
     {
         return view('livewire.nav.app.profile-button');
     }
+
+    public function logout()
+    {
+        auth()->logout();
+
+        return redirect('/');
+    }
 }

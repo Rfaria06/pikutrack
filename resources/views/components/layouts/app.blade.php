@@ -7,7 +7,7 @@
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
 
 
-        <title>{{$title ?? 'Pikutrack'}}</title>
+    <title>{{$title ?? 'Pikutrack'}}</title>
 
 </head>
 
