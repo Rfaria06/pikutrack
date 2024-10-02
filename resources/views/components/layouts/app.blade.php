@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{str_replace('_', '-', app()->getLocale())}}" data-theme="synthwave">
+<html lang="{{str_replace('_', '-', app()->getLocale())}}" data-theme="piku">
 
 <head>
     <meta charset="utf-8">

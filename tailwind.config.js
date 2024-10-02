@@ -11,6 +11,19 @@ export default {
     plugins: [require("daisyui")],
     daisyui: {
         themes: [
+            {
+                piku: {
+                    primary: "#a200c7",
+                    secondary: "#2629ff",
+                    accent: "#00b300",
+                    neutral: "#261f28",
+                    "base-100": "#292621",
+                    info: "#007ff4",
+                    success: "#00c000",
+                    warning: "#e16500",
+                    error: "#ff2f62",
+                },
+            },
             "light",
             "dark",
             "cupcake",
