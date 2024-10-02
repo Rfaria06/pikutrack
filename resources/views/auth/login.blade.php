@@ -11,13 +11,16 @@
         @csrf
 
         <!-- Email Address -->
-        <label class="input input-bordered flex items-center gap-2">
-            <i class="fa-solid fa-mail"></i>
-            <input id="email" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
+        <label class="input input-bordered input-primary flex items-center gap-2">
+            <i class="fa-solid fa-envelope"></i>
+            <input id="email" type="email" name="email" class="grow" placeholder="Email" value="{{ old('email') }}" required autofocus>
         </label>
 
         <!-- Password -->
-        <input id="password" type="password" name="password" placeholder="Password" class="input input-bordered" required>
+        <label class="input input-bordered input-primary flex items-center gap-2">
+            <i class="fa-solid fa-key"></i>
+            <input id="password" type="password" name="password" placeholder="Password" class="grow" required>
+        </label>
 
         <!-- Remember Me -->
         <div class="mt-4">

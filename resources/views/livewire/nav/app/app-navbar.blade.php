@@ -1,4 +1,4 @@
-<div class="navbar bg-base-300">
+<div class="navbar bg-base-300 shadow-2xl">
     <div class="navbar-start">
         <livewire:nav.app.menu-button />
     </div>
