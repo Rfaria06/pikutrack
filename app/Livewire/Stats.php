@@ -7,17 +7,17 @@ use Livewire\Component;
 
 class Stats extends Component
 {
-    private int $percentSpendinglimitReached = 0;
+    public int $percent_budget_reached = 0;
 
-    private int $spendingsThisMonth = 0;
+    public int $spendings_this_month = 0;
 
     private int $budget = 0;
 
-    private bool $budgetExceeded = false;
+    public bool $budget_exceeded = false;
 
-    private bool $budgetWarning = false;
+    public bool $budget_warning = false;
 
-    private string $currentMonth = '';
+    public string $current_month = '';
 
     /**
      * @param  Expense[]  $expenses
@@ -25,7 +25,7 @@ class Stats extends Component
     public function mount($expenses)
     {
         $this->budget = auth()->user()->spending_limit;
-        $this->currentMonth = date('F');
+        $this->current_month = date('F');
         $this->calculateSpendingsThisMonth($expenses);
     }
 
@@ -38,14 +38,14 @@ class Stats extends Component
     private function calculateSpendingsThisMonth($expenses)
     {
         foreach ($expenses as $expense) {
-            $this->spendingsThisMonth += $expense->amount;
+            $this->spendings_this_month += $expense->amount;
         }
-        $this->percentSpendinglimitReached = floor(($this->spendingsThisMonth / $this->budget) * 100);
+        $this->percent_budget_reached = floor(($this->spendings_this_month / $this->budget) * 100);
 
-        if ($this->percentSpendinglimitReached >= 100) {
-            $this->budgetExceeded = true;
-        } elseif ($this->percentSpendinglimitReached >= 75) {
-            $this->budgetWarning = true;
+        if ($this->percent_budget_reached >= 100) {
+            $this->budget_exceeded = true;
+        } elseif ($this->percent_budget_reached >= 75) {
+            $this->budget_warning = true;
         }
     }
 

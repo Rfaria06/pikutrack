@@ -9,13 +9,13 @@ class ExpenseOverview extends Component
 {
     public Expense $expense;
 
-    public string $timeDiff = '';
+    public string $time_diff = '';
 
     public function mount(Expense $expense)
     {
         $this->expense = $expense;
         $this->expense->amount /= 100;
-        $this->timeDiff = $this->expense->date->diffForHumans();
+        $this->time_diff = $this->expense->date->diffForHumans();
     }
 
     public function render()

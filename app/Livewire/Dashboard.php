@@ -8,7 +8,7 @@ use Livewire\Component;
 #[Title('Pikutrack | Dashboard')]
 class Dashboard extends Component
 {
-    private $expenses = [];
+    public $expenses = [];
 
     public function mount()
     {

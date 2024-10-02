@@ -4,7 +4,7 @@
       <h2 class="card-title">{{$this->expense->name}}</h2>
       <div class="w-full flex flex-row justify-between items-center">
         <span>CHF {{$this->expense->amount}}</span>
-        <time>{{$this->timeDiff}}</time>
+        <time>{{$this->time_diff}}</time>
       </div>
     </div>
   </a>
