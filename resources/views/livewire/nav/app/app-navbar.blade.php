@@ -1,6 +1,6 @@
 <div class="navbar bg-base-300">
     <div class="navbar-start">
-        <button>Menu</button>
+        <livewire:nav.app.menu-button />
     </div>
     <div class="navbar-center transition-transform">
         <a wire:navigate href="{{route('dashboard')}}" class="btn btn-ghost text-xl">Pikutrack</a>
