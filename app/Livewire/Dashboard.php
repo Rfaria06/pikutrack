@@ -15,7 +15,7 @@ class Dashboard extends Component
         $this->expenses = auth()->user()
             ->expenses()
             ->today()
-            ->limit(15)
+            ->limit(8)
             ->get();
     }
 }

@@ -1,5 +1,5 @@
 <div class="w-full">
-    <h1 class="font-bold text-xl mb-4">Dashboard</h1>
+    <h1 class="font-bold text-3xl mb-4">Dashboard</h1>
     <div class="divider"></div>
 
     <livewire:stats :expenses="$this->expenses" />
