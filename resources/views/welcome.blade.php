@@ -2,7 +2,7 @@
     <div class="hero">
         <div class="hero-content text-center">
             <div class="max-w-md">
-                <h1 class="text-5xl font-bold">Pikutrack</h1>
+                <h1 class="text-5xl font-bold spinning-gradient from-primary to-secondary">Pikutrack</h1>
                 <p class="py-6">
                     The friendly expense tracker
                 </p>

@@ -6,3 +6,24 @@
 @import "@fortawesome/fontawesome-free/css/regular.css";
 @import "@fortawesome/fontawesome-free/css/solid.css";
 @import "@fortawesome/fontawesome-free/css/brands.css";
+
+.spinning-gradient {
+    background: linear-gradient(270deg, var(--tw-gradient-stops));
+    background-size: 200% 200%; /* Adjust the size to control the speed */
+    animation: spinGradient 5s linear infinite; /* Adjust duration as needed */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Make text color transparent to show gradient */
+}
+
+@keyframes spinGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
