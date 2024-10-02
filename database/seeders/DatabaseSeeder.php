@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Enums\UserType;
 use App\Models\Expense;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
 
         Expense::factory()->count(5)->create([
             'user_id' => $testUser->id,
-            'date' => fake()->date(),
+            'date' => Carbon::today(),
         ]);
     }
 }

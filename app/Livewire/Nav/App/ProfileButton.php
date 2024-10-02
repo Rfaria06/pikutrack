@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Livewire\Nav\App;
+
+use Livewire\Component;
+
+class ProfileButton extends Component
+{
+    public $initials = '';
+
+    public function mount()
+    {
+        // Get the first and last name
+        // FIXME: If the user has a middle name, the first letter of the middle name will be taken
+        $nameParts = explode(' ', auth()->user()->name, 2);
+
+        // Get the first letter of first and last name
+        $this->initials = $nameParts[0][0].$nameParts[1][0];
+    }
+
+    public function render()
+    {
+        return view('livewire.nav.app.profile-button');
+    }
+}

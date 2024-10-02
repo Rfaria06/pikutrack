@@ -10,8 +10,7 @@ class Dashboard extends Component
 
     public function mount()
     {
-        $this->expenses = auth()
-            ->user()
+        $this->expenses = auth()->user()
             ->expenses()
             ->today()
             ->limit(15)
