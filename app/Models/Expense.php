@@ -10,6 +10,10 @@ class Expense extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+
     public function scopeToday($query)
     {
         $query->whereDate('date', Carbon::today())

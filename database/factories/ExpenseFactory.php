@@ -10,6 +10,50 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ExpenseFactory extends Factory
 {
+    private $expenseNames = [
+        'Carwash',
+        'Groceries',
+        'Rent',
+        'Utilities',
+        'Internet',
+        'Phone Bill',
+        'Gas',
+        'Electricity',
+        'Water Bill',
+        'Insurance',
+        'Fuel',
+        'Car Maintenance',
+        'Parking Fees',
+        'Public Transportation',
+        'Gym Membership',
+        'Medical Expenses',
+        'Prescription Medications',
+        'Dining Out',
+        'Entertainment',
+        'Streaming Services',
+        'Clothing',
+        'Laundry',
+        'Pet Care',
+        'Child Care',
+        'Household Supplies',
+        'Furniture',
+        'Electronics',
+        'Subscriptions',
+        'Loan Payments',
+        'Credit Card Payments',
+        'Savings Contribution',
+        'Charity Donations',
+        'Travel',
+        'Hotel',
+        'Airfare',
+        'Taxi or Ride-share',
+        'Gifts',
+        'Home Repairs',
+        'Education',
+        'Books',
+        'Office Supplies',
+    ];
+
     /**
      * Define the model's default state.
      *
@@ -18,7 +62,7 @@ class ExpenseFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->slug(),
+            'name' => fake()->randomElement($this->expenseNames),
             'description' => fake()->randomHtml(),
             'amount' => fake()->numberBetween(100, 2500),
             'date' => fake()->dateTimeThisMonth(),

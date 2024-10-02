@@ -12,4 +12,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
 
     Route::get('/expenses', ExpensesList::class)->name('expenses.list');
+    Route::get('/expenses/{id}', ExpensesList::class)->name('expenses.show');
 });

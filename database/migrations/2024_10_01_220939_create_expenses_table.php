@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->unsignedBigInteger('amount');
-            $table->date('date')->default(today());
+            $table->dateTime('date')->default(now());
             $table->foreignId('user_id');
             $table->timestamps();
         });
