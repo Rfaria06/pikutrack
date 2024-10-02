@@ -2,12 +2,28 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Expense extends Model
 {
     use HasFactory;
+
+    public function scopeToday($query)
+    {
+        $query->whereDate('date', Carbon::today())
+            ->orderBy('date', 'desc')
+            ->orderBy('created_at', 'desc');
+    }
+
+    public function scopeThisMonth($query)
+    {
+        $query->whereMonth('date', Carbon::today()->month)
+            ->whereYear('date', Carbon::today()->year)
+            ->orderBy('date', 'desc')
+            ->orderBy('created_at', 'desc');
+    }
 
     public function user()
     {

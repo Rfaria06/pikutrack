@@ -27,5 +27,10 @@ class DatabaseSeeder extends Seeder
         Expense::factory()->count(25)->create([
             'user_id' => $testUser->id,
         ]);
+
+        Expense::factory()->count(5)->create([
+            'user_id' => $testUser->id,
+            'date' => fake()->date(),
+        ]);
     }
 }
