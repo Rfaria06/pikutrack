@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => $testUser->id,
         ]);
 
-        Expense::factory()->count(5)->create([
+        Expense::factory()->count(10)->create([
             'user_id' => $testUser->id,
             'date' => Carbon::today(),
         ]);

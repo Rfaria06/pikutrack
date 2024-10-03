@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Category;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,6 +13,7 @@ class Expense extends Model
 
     protected $casts = [
         'date' => 'datetime',
+        'category' => Category::class,
     ];
 
     public function scopeToday($query)

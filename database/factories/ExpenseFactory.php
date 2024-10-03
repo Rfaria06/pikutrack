@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\Category;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -66,6 +67,7 @@ class ExpenseFactory extends Factory
             'description' => fake()->randomHtml(),
             'amount' => fake()->numberBetween(100, 2500),
             'date' => fake()->dateTimeThisMonth(),
+            'category' => fake()->randomElement(Category::cases()),
             'user_id' => User::factory(),
         ];
     }

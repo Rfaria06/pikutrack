@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\Category;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,6 +18,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->unsignedBigInteger('amount');
             $table->dateTime('date')->default(now());
+            $table->integer('category')->default(Category::OTHER);
             $table->foreignId('user_id');
             $table->timestamps();
         });
