@@ -7,6 +7,6 @@
     <h2 class="font-bold mb-3">Latest expenses</h2>
 
     @foreach($this->expenses as $expense)
-        <livewire:expenses.expense-overview :expense="$expense" />
+        <livewire:expenses.expense-overview :expense="$expense" :key="$expense->id" />
     @endforeach
 </div>
