@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Expenses;
 
+use App\Enums\QuickFilterOption;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -12,9 +13,13 @@ class ExpensesList extends Component
 {
     use WithPagination;
 
-    public bool $filter_this_month = false;
+    private QuickFilterOption $quick_filter = QuickFilterOption::NONE;
 
-    public bool $filter_today = false;
+    #[On('expenses.filter.applied')]
+    public function filter($options)
+    {
+        $this->quick_filter = QuickFilterOption::tryFrom($options['quick_filter']);
+    }
 
     public function render()
     {
@@ -22,28 +27,14 @@ class ExpensesList extends Component
             ->expenses()
             ->orderBy('date', 'desc');
 
-        if ($this->filter_this_month) {
+        if ($this->quick_filter === QuickFilterOption::MONTH) {
             $expenses = $expenses->thisMonth();
-        } elseif ($this->filter_today) {
+        } elseif ($this->quick_filter === QuickFilterOption::TODAY) {
             $expenses = $expenses->today();
         }
 
         return view('livewire.expenses.expenses-list', [
             'expenses' => $expenses->paginate(10),
         ]);
-    }
-
-    #[On('toggle-filter-this-month')]
-    public function toggleFilterThisMonth()
-    {
-        $this->filter_this_month = ! $this->filter_this_month;
-        $this->dispatch('this-month-filter-changed', $this->filter_this_month);
-    }
-
-    #[On('toggle-filter-today')]
-    public function toggleFilterToday()
-    {
-        $this->filter_today = ! $this->filter_today;
-        $this->dispatch('today-filter-changed', $this->filter_today);
     }
 }

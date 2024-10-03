@@ -2,25 +2,18 @@
 
 namespace App\Livewire\Expenses;
 
-use Livewire\Attributes\On;
+use App\Enums\QuickFilterOption;
 use Livewire\Component;
 
 class FilterDrawer extends Component
 {
-    public string $filterThisMonthClassName = 'btn-outline';
+    public QuickFilterOption $quick_filter = QuickFilterOption::NONE;
 
-    public string $filterTodayClassName = 'btn-outline';
-
-    #[On('this-month-filter-changed')]
-    public function getFilterThisMonthClassName(bool $active)
+    public function applyFilter()
     {
-        $this->filterThisMonthClassName = $active ? '' : 'btn-outline';
-    }
-
-    #[On('today-filter-changed')]
-    public function getFilterTodayClassName(bool $active)
-    {
-        $this->filterTodayClassName = $active ? '' : 'btn-outline';
+        $this->dispatch('expenses.filter.applied', [
+            'quick_filter' => $this->quick_filter,
+        ]);
     }
 
     public function render()

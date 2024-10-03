@@ -9,10 +9,21 @@
             <h3 class="font-bold text-lg">Filter options</h3>
             <div class="divider"></div>
 
-            <div class="flex flex-col gap-2">
-                <button type="button" wire:click="$dispatch('toggle-filter-this-month')" class="btn btn-block btn-secondary {{$this->filterThisMonthClassName}}">This month</button>
-                <button type="button" wire:click="$dispatch('toggle-filter-today')" class="btn btn-block btn-secondary {{$this->filterTodayClassName}}">Today</button>
-            </div>
+            <form wire:submit="applyFilter">
+                <div class="flex flex-col gap-2">
+                    <label class="form-control w-full">
+                        <div class="label">
+                            <span class="label-text">Quick filter</span>
+                        </div>
+                        <select wire:model="quick_filter" class="select select-secondary w-full max-w-xs">
+                          <option value="0">None</option>
+                          <option value="1">This month</option>
+                          <option value="2">Today</option>
+                        </select>
+                    </label>
+                    <button type="submit" class="btn btn-block btn-primary">Apply</button>
+                </div>
+            </form>
         </ul>
     </div>
 </div>
