@@ -3,8 +3,8 @@
 namespace App\Livewire\Expenses;
 
 use App\Enums\QuickFilterOption;
-use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -13,12 +13,12 @@ class ExpensesList extends Component
 {
     use WithPagination;
 
-    private QuickFilterOption $quick_filter = QuickFilterOption::NONE;
+    #[Url]
+    public QuickFilterOption $quick_filter = QuickFilterOption::NONE;
 
-    #[On('expenses.filter.applied')]
-    public function filter($options)
+    public function applyFilter()
     {
-        $this->quick_filter = QuickFilterOption::tryFrom($options['quick_filter']);
+        $this->resetPage();
     }
 
     public function render()

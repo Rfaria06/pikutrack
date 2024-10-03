@@ -9,19 +9,19 @@
             <h3 class="font-bold text-lg">Filter options</h3>
             <div class="divider"></div>
 
-            <form wire:submit="applyFilter">
+            <form wire:submit="$parent.applyFilter">
                 <div class="flex flex-col gap-2">
                     <label class="form-control w-full">
                         <div class="label">
                             <span class="label-text">Quick filter</span>
                         </div>
-                        <select wire:model="quick_filter" class="select select-secondary w-full max-w-xs">
-                          <option value="0">None</option>
-                          <option value="1">This month</option>
-                          <option value="2">Today</option>
+                        <select wire:model="$parent.quick_filter" class="select select-secondary w-full max-w-xs">
+                          <option value="none">None</option>
+                          <option value="month">This month</option>
+                          <option value="today">Today</option>
                         </select>
                     </label>
-                    <button type="submit" class="btn btn-block btn-primary">Apply</button>
+                    <button type="submit" class="btn btn-block btn-primary">Apply filter</button>
                 </div>
             </form>
         </ul>

@@ -2,9 +2,9 @@
 
 namespace App\Enums;
 
-enum QuickFilterOption: int
+enum QuickFilterOption: string
 {
-    case NONE = 0;
-    case MONTH = 1;
-    case TODAY = 2;
+    case NONE = 'none';
+    case MONTH = 'month';
+    case TODAY = 'today';
 }
