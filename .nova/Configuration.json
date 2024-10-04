@@ -1,7 +1,8 @@
 {
   "biati.phpcsfixer.bladeRespectNova" : true,
-  "biati.phpcsfixer.phpcsconfig" : ".php-cs-fixer.php",
-  "biati.phpcsfixer.workspaceconfigenable" : "enable",
+  "biati.phpcsfixer.onlyiflocalconfigfile" : false,
+  "biati.phpcsfixer.onsave" : true,
+  "biati.phpcsfixer.workspaceconfigenable" : "disable",
   "php.validate" : "onChange",
   "tommasonegri.htmlbeautifier.formatOnSave" : "true",
   "workspace.preview_append_paths" : false,

@@ -4,8 +4,6 @@
 
     <livewire:expenses.filter-drawer />
 
-    <button wire:click="resetFilter" class="btn btn-block btn-secondary mb-3">Reset Filter</button>
-
     <h2 class="font-bold mb-3">Your expenses</h2>
 
     @foreach($expenses as $expense)

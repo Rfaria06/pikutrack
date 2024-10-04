@@ -38,6 +38,8 @@
                     </label>
 
                     <button type="submit" class="btn btn-block btn-primary mt-3">Apply filter</button>
+                    <div class="divider"></div>
+                    <button type="button" wire:click="$parent.resetFilter" class="btn btn-block btn-secondary mb-3">Reset Filter</button>
                 </div>
             </form>
         </ul>

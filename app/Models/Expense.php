@@ -4,12 +4,14 @@ namespace App\Models;
 
 use App\Enums\Category;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Expense extends Model
 {
     use HasFactory;
+    use HasUlids;
 
     protected $casts = [
         'date' => 'datetime',
