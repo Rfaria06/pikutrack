@@ -4,6 +4,7 @@ namespace App\Livewire\Expenses;
 
 use App\Enums\Category;
 use App\Enums\QuickFilterOption;
+use App\Filters\ExpenseFilter;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -28,32 +29,13 @@ class ExpensesList extends Component
     public function resetFilter()
     {
         $this->quick_filter = QuickFilterOption::NONE;
+        $this->category = null;
     }
 
-    private function filterExpenses($expenses)
+    public function render(ExpenseFilter $filter)
     {
-        // Filter the timespan
-        if ($this->quick_filter === QuickFilterOption::MONTH) {
-            $expenses = $expenses->thisMonth();
-        } elseif ($this->quick_filter === QuickFilterOption::TODAY) {
-            $expenses = $expenses->today();
-        }
-
-        // Filter the category
-        if (! is_null($this->category)) {
-            $expenses = $expenses->where('category', $this->category);
-        }
-
-        return $expenses;
-    }
-
-    public function render()
-    {
-        $expenses = auth()->user()
-            ->expenses()
-            ->orderBy('date', 'desc');
-
-        $expenses = $this->filterExpenses($expenses);
+        $expenses = $filter
+            ->fromFilterOptions($this->quick_filter, $this->category);
 
         return view('livewire.expenses.expenses-list', [
             'expenses' => $expenses->paginate(10),
