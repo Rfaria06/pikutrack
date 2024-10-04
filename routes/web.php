@@ -1,7 +1,7 @@
 <?php
 
 use App\Livewire\Dashboard;
-use App\Livewire\Expenses\ExpensesList;
+use App\Livewire\Expenses;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,6 +11,6 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
 
-    Route::get('/expenses', ExpensesList::class)->name('expenses.list');
-    Route::get('/expenses/{id}', ExpensesList::class)->name('expenses.show');
+    Route::get('/expenses', Expenses\ExpensesList::class)->name('expenses.list');
+    Route::get('/expenses/{expense}', Expenses\Show::class)->name('expenses.show');
 });
