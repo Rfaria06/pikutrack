@@ -2,6 +2,7 @@
 
 use App\Livewire\Dashboard;
 use App\Livewire\Expenses;
+use App\Livewire\Expenses\Edit;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,4 +14,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/expenses', Expenses\ExpensesList::class)->name('expenses.list');
     Route::get('/expenses/{expense}', Expenses\Show::class)->name('expenses.show');
+    Route::get('/expenses/{expense}/edit', Edit::class)->name('expenses.edit');
 });

@@ -8,7 +8,7 @@
             <h2 class="text-lg font-bold mx-auto">{{$this->expense->amount / 100}} CHF</h2>
             <h3 class="text-md mx-auto">{{$this->expense->date->format('d. M Y H:i')}}</h3>
             <div class="divider"></div>
-            <button type="button" class="btn btn-block btn-secondary">Edit</button>
+            <a wire:navigate href="{{route('expenses.edit', $this->expense)}}" class="btn btn-block btn-secondary">Edit</a>
             <div class="divider"></div>
             <article>{!! nl2br($this->expense->description) !!}</article>
         </div>

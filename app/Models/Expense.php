@@ -18,6 +18,14 @@ class Expense extends Model
         'category' => Category::class,
     ];
 
+    protected $fillable = [
+        'name',
+        'description',
+        'category',
+        'amount',
+        'date',
+    ];
+
     public function scopeToday($query)
     {
         $query->whereDate('date', Carbon::today())
