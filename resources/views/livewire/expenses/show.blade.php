@@ -9,6 +9,7 @@
             <h3 class="text-md mx-auto">{{$this->expense->date->format('d. M Y H:i')}}</h3>
             <div class="divider"></div>
             <a wire:navigate href="{{route('expenses.edit', $this->expense)}}" class="btn btn-block btn-secondary">Edit</a>
+            <a href="{{url()->previous()}}" wire:navigate class="btn btn-block">Back</a>
             @if(strlen($this->expense->description))
                 <div class="divider"></div>
                 <article>{!! nl2br($this->expense->description) !!}</article>

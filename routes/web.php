@@ -13,8 +13,10 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
 
-    Route::get('/expenses', Expenses\ExpensesList::class)->name('expenses.index');
-    Route::get('/expenses/create', Create::class)->name('expenses.create');
-    Route::get('/expenses/{expense}', Expenses\Show::class)->name('expenses.show');
-    Route::get('/expenses/{expense}/edit', Edit::class)->name('expenses.edit');
+    Route::prefix('expenses')->name('expenses.')->group(function () {
+        Route::get('/', Expenses\ExpensesList::class)->name('index');
+        Route::get('/create', Create::class)->name('create');
+        Route::get('/{expense}', Expenses\Show::class)->name('show');
+        Route::get('/{expense}/edit', Edit::class)->name('edit');
+    });
 });
