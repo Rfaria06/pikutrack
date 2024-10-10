@@ -4,6 +4,8 @@
 
     <livewire:stats />
 
+    <x-create-expense-button />
+
     @unless(count($this->expenses_today) === 0)
         <h2 class="font-bold mb-3">Today's expenses</h2>
 

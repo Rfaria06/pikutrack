@@ -8,8 +8,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Pikutrack | Edit expense')]
-class Edit extends Component
+#[Title('Pikutrack | Create expense')]
+class Create extends Component
 {
     use AuthorizesRequests;
 
@@ -17,20 +17,18 @@ class Edit extends Component
 
     public function save()
     {
-        $this->form->update();
+        $expense = $this->form->store();
 
-        return $this->redirectRoute('expenses.show', $this->form->expense, navigate: true);
+        return $this->redirectRoute('expenses.show', $expense);
     }
 
-    public function mount(Expense $expense)
+    public function mount()
     {
-        $this->authorize('update', $expense);
-
-        $this->form->setExpense($expense);
+        $this->authorize('create', Expense::class);
     }
 
     public function render()
     {
-        return view('livewire.expenses.edit');
+        return view('livewire.expenses.create');
     }
 }

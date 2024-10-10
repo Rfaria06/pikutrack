@@ -12,4 +12,9 @@ enum Category: int
     case TRANSPORTATION = 5;
     case BILLS = 6;
     case SWEET_TREAT = 7;
+
+    public function getDisplayName(): string
+    {
+        return ucwords(strtolower(str_replace('_', ' ', $this->name)));
+    }
 }

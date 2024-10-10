@@ -2,7 +2,7 @@
     <div class="card-body">
         <h1 class="card-title">
             {{$this->expense->name}}
-            <span class="badge badge-primary badge-xl">{{ucwords(strtolower(str_replace('_', ' ', $this->expense->category->name)))}}</span>
+            <span class="badge badge-primary badge-xl">{{$this->expense->category->getDisplayName()}}</span>
         </h1>
         <div class="flex flex-col gap-2">
             <h2 class="text-lg font-bold mx-auto">{{$this->expense->amount / 100}} CHF</h2>

@@ -2,6 +2,8 @@
     <h1 class="font-bold text-3xl mb4">Expenses</h1>
     <div class="divider"></div>
 
+    <x-create-expense-button />
+
     <livewire:expenses.filter-drawer />
 
     <h2 class="font-bold mb-3">Your expenses</h2>

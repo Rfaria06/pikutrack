@@ -18,18 +18,22 @@ class ExpenseForm extends Form
     public Category $category = Category::OTHER;
 
     #[Validate('required|numeric')]
-    public string $amount = '0.00';
+    public int $amount = 0;
 
     #[Validate('required|date')]
     public string $date;
 
     public ?Expense $expense;
 
+    /**
+     * Store the new expense in the database
+     */
     public function store()
     {
         $this->validate();
 
-        Expense::create($this->except(['expense']));
+        return auth()->user()->expenses()
+            ->create($this->except('expense'));
     }
 
     public function update()

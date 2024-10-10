@@ -12,7 +12,7 @@ class ExpensePolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return $user->exists;
     }
 
     /**
@@ -28,7 +28,7 @@ class ExpensePolicy
      */
     public function create(User $user): bool
     {
-        return true;
+        return $user->exists;
     }
 
     /**

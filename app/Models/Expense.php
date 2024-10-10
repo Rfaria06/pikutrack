@@ -29,16 +29,14 @@ class Expense extends Model
     public function scopeToday($query)
     {
         $query->whereDate('date', Carbon::today())
-            ->orderBy('date', 'desc')
-            ->orderBy('created_at', 'desc');
+            ->orderBy('date', 'desc');
     }
 
     public function scopeThisMonth($query)
     {
         $query->whereMonth('date', Carbon::today()->month)
             ->whereYear('date', Carbon::today()->year)
-            ->orderBy('date', 'desc')
-            ->orderBy('created_at', 'desc');
+            ->orderBy('date', 'desc');
     }
 
     public function user()

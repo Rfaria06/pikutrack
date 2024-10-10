@@ -1,7 +1,10 @@
 <div class="drawer z-[1]">
     <input id="expense-filter-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
-        <label for="expense-filter-drawer" class="btn btn-block btn-primary drawer-button mb-3">Filter</label>
+        <label for="expense-filter-drawer" class="btn btn-block btn-secondary drawer-button mb-3">
+            <i class="fa-solid fa-filter"></i>
+            Filter
+        </label>
     </div>
     <div class="drawer-side">
         <label for="expense-filter-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
@@ -32,7 +35,7 @@
                         <select wire:model="$parent.category" class="select select-secondary w-full max-w-xs">
                             <option value="" selected>Not filtered</option>
                             @foreach(\App\Enums\Category::cases() as $case)
-                                <option wire:key="{{$case->value}}" value="{{$case->value}}">{{ucwords(strtolower(str_replace('_', ' ', $case->name)))}}</option>
+                                <option wire:key="{{$case->value}}" value="{{$case->value}}">{{$case->getDisplayName()}}</option>
                             @endforeach
                         </select>
                     </label>
