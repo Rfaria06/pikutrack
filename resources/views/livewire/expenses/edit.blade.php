@@ -27,4 +27,8 @@
 
         <button type="submit" class="btn btn-block btn-primary">Save</button>
     </form>
+
+    <div class="divider"></div>
+
+    <button type="button" wire:click="delete" wire:confirm="Are you sure?" class="btn btn-block btn-outline btn-warning">Delete</button>
 </x-card>

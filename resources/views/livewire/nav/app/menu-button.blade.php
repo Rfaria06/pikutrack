@@ -5,7 +5,7 @@
         </div>
         <ul class="menu menu-lg dropdown-content rounded-box z-[1] mt-3 bg-base-300">
             <li>
-                <a href="{{route("expenses.list")}}" wire:navigate>
+                <a href="{{route("expenses.index")}}" wire:navigate>
                     <i class="fa-solid fa-coins"></i>
                     Expenses
                 </a>

@@ -8,9 +8,14 @@
 
     <h2 class="font-bold mb-3">Your expenses</h2>
 
-    @foreach($expenses as $expense)
-        <livewire:expenses.expense-overview :expense="$expense" :key="$expense->id" />
-    @endforeach
+    @unless(count($expenses) === 0)
+        @foreach($expenses as $expense)
+            <livewire:expenses.expense-overview :expense="$expense" :key="$expense->id" />
+        @endforeach
+
+        @else
+        <span>No Expenses yet!</span>
+    @endunless
 
     {{$expenses->links()}}
 </div>
