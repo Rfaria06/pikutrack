@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class Stats extends Component
 {
+    public $expenses = [];
+
     public int $percent_budget_reached = 0;
 
     public int $spendings_this_month = 0;
@@ -22,11 +24,15 @@ class Stats extends Component
     /**
      * @param  Expense[]  $expenses
      */
-    public function mount($expenses)
+    public function mount()
     {
+        $this->expenses = auth()->user()->expenses()
+            ->thisMonth()
+            ->get();
+
         $this->budget = auth()->user()->spending_limit;
         $this->current_month = date('F');
-        $this->calculateSpendingsThisMonth($expenses);
+        $this->calculateSpendingsThisMonth($this->expenses);
     }
 
     /**
