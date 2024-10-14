@@ -28,15 +28,16 @@ class ProfileButton extends Component
         $this->initials = $name_parts[0][0].($name_parts[1][0] ?? '');
     }
 
+    public function logout()
+    {
+        dd();
+        auth()->logout();
+
+        $this->redirectRoute('root', navigate: false);
+    }
+
     public function render()
     {
         return view('livewire.nav.app.profile-button');
-    }
-
-    public function logout()
-    {
-        auth()->logout();
-
-        return redirect('/');
     }
 }

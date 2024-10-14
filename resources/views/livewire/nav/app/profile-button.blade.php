@@ -15,10 +15,10 @@
                 </a>
             </li>
             <li>
-                <a href="#" wire:click.prevent="logout">
+                <button wire:click="logout">
                     <i class="fa-solid fa-door-open"></i>
                     Logout
-                </a>
+                </button>
             </li>
         </ul>
     </div>

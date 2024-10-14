@@ -16,6 +16,8 @@
             <input wire:model="email" class="grow" placeholder="Email" />
         </label>
 
+        {{-- <a wire:navigate href="{{route('')}}" class="btn btn-block btn-outline">Reset password?</a> --}}
+
         <button type="submit" class="btn btn-block btn-primary">Save</button>
     </form>
 
