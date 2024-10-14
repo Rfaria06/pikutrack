@@ -5,6 +5,12 @@
         </div>
         <ul class="menu menu-lg dropdown-content rounded-box z-[1] mt-3 bg-base-300">
             <li>
+                <a href="{{route("settings")}}" wire:navigate>
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+            <li>
                 <a href="#" wire:click.prevent="logout">
                     <i class="fa-solid fa-door-open"></i>
                     Logout

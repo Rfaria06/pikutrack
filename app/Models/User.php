@@ -24,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar',
     ];
 
     /**
@@ -48,6 +49,16 @@ class User extends Authenticatable
             'password' => 'hashed',
             'user_type' => UserType::class,
         ];
+    }
+
+    public function hasAvatar(): bool
+    {
+        return ! empty($this->avatar);
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->user_type === UserType::ADMIN;
     }
 
     public function expenses()

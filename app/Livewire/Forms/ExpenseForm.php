@@ -41,7 +41,7 @@ class ExpenseForm extends Form
         $this->validate();
 
         $this->expense->update(
-            $this->all()
+            $this->except('expense')
         );
     }
 

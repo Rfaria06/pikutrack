@@ -4,6 +4,7 @@ use App\Livewire\Dashboard;
 use App\Livewire\Expenses;
 use App\Livewire\Expenses\Create;
 use App\Livewire\Expenses\Edit;
+use App\Livewire\Users\Settings;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,6 +13,8 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
+
+    Route::get('/settings', Settings::class)->name('settings');
 
     Route::prefix('expenses')->name('expenses.')->group(function () {
         Route::get('/', Expenses\ExpensesList::class)->name('index');
