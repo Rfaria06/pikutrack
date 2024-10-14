@@ -18,10 +18,11 @@ class AvatarSwitcher extends Component
     {
         $this->validate();
 
-        // Delete old avatar if exists
         $user = auth()->user();
-        if ($user->avatar) {
-            Storage::delete('avatars/'.$user->avatar);
+
+        // Delete old avatar if it exists
+        if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
+            Storage::disk('public')->delete($user->avatar);
         }
 
         // Store new avatar

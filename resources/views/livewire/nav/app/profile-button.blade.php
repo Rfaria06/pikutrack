@@ -1,7 +1,11 @@
 <button class="btn btn-ghost btn-circle">
     <div class="dropdown dropdown-end">
         <div role="button" tabindex="0" class="btn btn-ghost btn-circle avatar">
-            {{$this->initials}}
+            @if($this->avatar_url)
+                <img src="{{$this->avatar_url}}" class="object-cover rounded-full" />
+            @else
+                {{$this->initials}}
+            @endif
         </div>
         <ul class="menu menu-lg dropdown-content rounded-box z-[1] mt-3 bg-base-300">
             <li>
