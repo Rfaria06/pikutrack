@@ -29,6 +29,13 @@ class Settings extends Component
         $this->user = auth()->user();
     }
 
+    public function logout()
+    {
+        auth()->logout();
+
+        $this->redirect('/', navigate: true);
+    }
+
     public function render()
     {
         return view('livewire.users.settings');

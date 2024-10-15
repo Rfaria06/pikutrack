@@ -21,7 +21,6 @@ class FortifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         Fortify::loginView(fn () => view('auth.login'));
-        Fortify::resetPasswordView(fn () => view('auth.forgot-password'));
     }
 
     /**

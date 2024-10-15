@@ -16,9 +16,14 @@
             <input wire:model="email" class="grow" placeholder="Email" />
         </label>
 
-        {{-- <a wire:navigate href="{{route('')}}" class="btn btn-block btn-outline">Reset password?</a> --}}
-
         <button type="submit" class="btn btn-block btn-primary">Save</button>
+
+        <div class="divider"></div>
+
+        <button wire:click="logout" class="btn btn-block btn-outline btn-secondary">
+            <i class="fa-solid fa-door-open"></i>
+            Logout
+        </button>
     </form>
 
 </x-card>
