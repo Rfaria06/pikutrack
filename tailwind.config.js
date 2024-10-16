@@ -22,6 +22,9 @@ export default {
                     success: "#00c000",
                     warning: "#e16500",
                     error: "#ff2f62",
+
+                    "--rounded-box": "0.5rem",
+                    "--rounded-btn": ".3rem",
                 },
             },
             "light",

@@ -49,6 +49,7 @@
     <button wire:click="logout" class="btn btn-block btn-outline btn-secondary">
         <i class="fa-solid fa-door-open"></i>
         Logout
+        <span wire:loading class="loading loading-spinner"></span>
     </button>
 
 </x-card>
