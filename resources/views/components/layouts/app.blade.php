@@ -13,6 +13,7 @@
 
 <body class="overflow-x-hidden overflow-y-auto">
     <livewire:nav.app.app-navbar />
+    <x-layouts.flash />
     <x-container>{{$slot}}</x-container>
 </body>
 

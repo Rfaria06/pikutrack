@@ -33,6 +33,8 @@ class AvatarSwitcher extends Component
             'avatar' => $filename,
         ]);
 
+        session()->flash('message', 'Avatar updated');
+
         $this->redirectRoute('settings', navigate: true);
     }
 

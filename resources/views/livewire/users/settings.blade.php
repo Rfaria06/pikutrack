@@ -16,6 +16,11 @@
             <input wire:model="email" class="grow" placeholder="Email" />
         </label>
 
+        <label class="input input-bordered flex items-center gap-2 w-full">
+            <i class="fa-solid fa-wallet"></i>
+            <input wire:model="spending_limit" type="number" step="0.01" class="grow" placeholder="Spending limit" />
+        </label>
+
         <button type="submit" class="btn btn-block btn-primary">Save</button>
 
         <div class="divider"></div>
