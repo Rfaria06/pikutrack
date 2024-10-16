@@ -4,7 +4,7 @@
     </div>
 
     @error('avatar')
-        <div class="text-red-500">{{$message}}</div>
+        <div class="text-error">{{$message}}</div>
     @enderror
 
     @if($avatar instanceof \Livewire\TemporaryUploadedFile)
@@ -15,5 +15,8 @@
     @endif
 
 
-    <button type="submit" class="btn btn-block btn-secondary">Save Avatar</button>
+    <button type="submit" class="btn btn-block btn-secondary">
+        Save Avatar
+        <span wire:loading class="loading loading-spinner"></span>
+    </button>
 </form>
