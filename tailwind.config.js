@@ -25,6 +25,8 @@ export default {
 
                     "--rounded-box": "0.5rem",
                     "--rounded-btn": ".3rem",
+                    "--animation-btn": "0",
+                    "--animation-input": "0",
                 },
             },
             "light",
