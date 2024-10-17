@@ -28,4 +28,17 @@ trait ConvertMonetaryAmount
     {
         return $cents / 100;
     }
+
+    /**
+     * Get the amount in CHF as string, ensuring trailing zeroes are kept
+     *
+     * @param  int  $cents  amount in cents
+     * @return string The amount in CHF with trailing zeroes
+     */
+    private function chfAsString(int $cents): string
+    {
+        $chf = $this->chfFromCents($cents);
+
+        return number_format($chf, 2);
+    }
 }

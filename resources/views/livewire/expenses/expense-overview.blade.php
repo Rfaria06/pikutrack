@@ -6,7 +6,7 @@
                 <div class="badge badge-primary">{{$this->expense->category->getDisplayName()}}</div>
             </div>
             <div class="w-full flex flex-row justify-between items-center">
-                <span>CHF {{$this->expense->amount}}</span>
+                <span>CHF {{$this->amount}}</span>
                 <time>{{$this->time_diff}}</time>
             </div>
         </div>

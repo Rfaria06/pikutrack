@@ -3,18 +3,24 @@
 namespace App\Livewire\Expenses;
 
 use App\Models\Expense;
+use App\Traits\ConvertMonetaryAmount;
 use Livewire\Component;
 
 class ExpenseOverview extends Component
 {
+    use ConvertMonetaryAmount;
+
     public Expense $expense;
 
     public string $time_diff = '';
 
+    // Use local variable for amount to set it as float
+    public string $amount = '';
+
     public function mount(Expense $expense)
     {
         $this->expense = $expense;
-        $this->expense->amount /= 100;
+        $this->amount = $this->chfAsString($expense->amount);
 
         // Check if date difference is more than 24 hours
         if ($this->expense->date->diffInHours(now()) > 24) {

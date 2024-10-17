@@ -5,7 +5,7 @@
             <span class="badge badge-primary badge-xl">{{$this->expense->category->getDisplayName()}}</span>
         </h1>
         <div class="flex flex-col gap-2">
-            <h2 class="text-lg font-bold mx-auto">{{$this->expense->amount / 100}} CHF</h2>
+            <h2 class="text-lg font-bold mx-auto">{{$this->amount}} CHF</h2>
             <h3 class="text-md mx-auto">{{$this->expense->date->format('d. M Y H:i')}}</h3>
             <div class="divider"></div>
             <a wire:navigate href="{{route('expenses.edit', $this->expense)}}" class="btn btn-block btn-secondary">Edit</a>

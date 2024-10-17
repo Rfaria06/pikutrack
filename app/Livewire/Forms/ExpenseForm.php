@@ -21,7 +21,7 @@ class ExpenseForm extends Form
     public Category $category = Category::OTHER;
 
     #[Validate('required|numeric')]
-    public float $amount = 0;
+    public string $amount = '';
 
     #[Validate('required|date')]
     public string $date;
@@ -58,7 +58,7 @@ class ExpenseForm extends Form
         $this->name = $expense->name;
         $this->description = $expense->description;
         $this->category = $expense->category;
-        $this->amount = $this->chfFromCents($expense->amount);
+        $this->amount = $this->chfAsString($expense->amount);
         $this->date = $this->expense->date->format('Y-m-d\TH:i');
     }
 }
