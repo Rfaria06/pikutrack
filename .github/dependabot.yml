@@ -6,14 +6,14 @@
 version: 2
 updates:
   - package-ecosystem: "composer"
-    directory: "/" # Location of your composer.json
+    directory: "/"
     schedule:
-      interval: "weekly" # You can change this to daily or monthly
+      interval: "weekly"
     commit-message:
       prefix: "composer"
 
-  - package-ecosystem: "yarn"
-    directory: "/" # Location of your package.json and yarn.lock
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
       interval: "weekly"
     commit-message:
