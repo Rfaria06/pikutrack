@@ -7,14 +7,14 @@
         </label>
 
         <label class="input input-bordered w-full flex items-center gap-2">
-            Amount (Cents)
+            Amount
             <input wire:model="form.amount" type="number" step="0.01" class="grow" />
         </label>
 
         <select wire:model="form.category" class="select select-bordered w-full">
             <option value="" selected disabled>Category</option>
             @foreach(\App\Enums\Category::cases() as $case)
-                <option wire:key="{{$case->value}}" value="{{$case->value}}">{{ucwords(strtolower(str_replace('_', ' ', $case->name)))}}</option>
+                <option wire:key="{{$case->value}}" value="{{$case->value}}">{{$case->getDisplayName()}}</option>
             @endforeach
         </select>
 

@@ -10,6 +10,15 @@
                     Expenses
                 </a>
             </li>
+            @if($this->is_admin)
+                <li>
+                    <a href="{{route('users')}}" wire:navigate>
+                        <i class="fa-solid fa-users"></i>
+                        Users
+                        <div class="badge badge-secondary badge-outline">Admin</div>
+                    </a>
+                </li>
+            @endif
         </ul>
     </div>
 </button>

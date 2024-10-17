@@ -14,7 +14,7 @@
         <select wire:model="form.category" class="select select-bordered w-full">
             <option value="" selected disabled>Category</option>
             @foreach(\App\Enums\Category::cases() as $case)
-                <option wire:key="{{$case->value}}" value="{{$case->value}}">{{ucwords(strtolower(str_replace('_', ' ', $case->name)))}}</option>
+                <option wire:key="{{$case->value}}" value="{{$case->value}}">{{$case->getDisplayName()}}</option>
             @endforeach
         </select>
 

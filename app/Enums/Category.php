@@ -2,8 +2,12 @@
 
 namespace App\Enums;
 
+use App\Traits\DisplaysName;
+
 enum Category: int
 {
+    use DisplaysName;
+
     case OTHER = 0;
     case FOOD = 1;
     case COSMETICS = 2;
@@ -12,9 +16,4 @@ enum Category: int
     case TRANSPORTATION = 5;
     case BILLS = 6;
     case SWEET_TREAT = 7;
-
-    public function getDisplayName(): string
-    {
-        return ucwords(strtolower(str_replace('_', ' ', $this->name)));
-    }
 }
