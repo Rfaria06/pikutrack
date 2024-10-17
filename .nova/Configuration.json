@@ -4,6 +4,7 @@
   "biati.phpcsfixer.onsave" : true,
   "biati.phpcsfixer.workspaceconfigenable" : "disable",
   "php.validate" : "onChange",
+  "tailwindcss.workspace.tailwindConfig" : ".\/tailwind.config.js",
   "tommasonegri.htmlbeautifier.formatOnSave" : "true",
   "workspace.preview_append_paths" : false,
   "workspace.preview_type" : "custom",

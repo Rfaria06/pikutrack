@@ -32,5 +32,17 @@ class DatabaseSeeder extends Seeder
             'user_id' => $testUser->id,
             'date' => Carbon::today(),
         ]);
+
+        $adminUser = User::factory()->create([
+            'name' => 'Admin User',
+            'email' => 'admin@example.com',
+            'password' => '12345678',
+            'user_type' => UserType::ADMIN,
+        ]);
+
+        Expense::factory()->count(10)->create([
+            'user_id' => $adminUser->id,
+            'date' => Carbon::today(),
+        ]);
     }
 }
