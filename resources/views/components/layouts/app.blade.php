@@ -9,6 +9,12 @@
 
         <title>{{$title ?? 'Pikutrack'}}</title>
 
+        <!-- Include Bubble Theme -->
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+        <!-- Include the Quill library -->
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
 </head>
 
 <body class="overflow-x-hidden overflow-y-auto">
