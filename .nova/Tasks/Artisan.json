@@ -2,11 +2,11 @@
   "actions" : {
     "build" : {
       "enabled" : true,
-      "script" : "#!\/bin\/sh\ncomposer install"
+      "script" : "#!\/bin\/sh\ncomposer install\nyarn"
     },
     "run" : {
       "enabled" : true,
-      "script" : "#!\/bin\/sh\nphp artisan serve"
+      "script" : "#!\/bin\/sh\ncomposer run dev"
     }
   }
 }
