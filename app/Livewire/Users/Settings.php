@@ -3,13 +3,14 @@
 namespace App\Livewire\Users;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Session;
+use App\Traits\ConvertMonetaryAmount;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Settings extends Component
 {
+    use ConvertMonetaryAmount;
     use WithFileUploads;
 
     public User $user;
@@ -34,9 +35,7 @@ class Settings extends Component
 
         $user->name = trim($this->name);
         $user->email = trim($this->email);
-        // Convert the decimal string back to a float and only keep the last 2 decimal places
-        $spending_limit = (float) number_format($this->spending_limit, 2, '.', '');
-        $user->spending_limit = floor($spending_limit * 100); // Convert back to cents
+        $user->spending_limit = $this->centsFromChf($this->spending_limit);
 
         $user->save();
 
@@ -50,7 +49,7 @@ class Settings extends Component
         $this->user = auth()->user();
         $this->name = $this->user->name;
         $this->email = $this->user->email;
-        $this->spending_limit = $this->user->spending_limit / 100;
+        $this->spending_limit = $this->chfFromCents($this->user->spending_limit);
     }
 
     public function logout()

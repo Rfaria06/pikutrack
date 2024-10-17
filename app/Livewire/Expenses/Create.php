@@ -19,7 +19,9 @@ class Create extends Component
     {
         $expense = $this->form->store();
 
-        return $this->redirectRoute('expenses.show', $expense);
+        session()->flash('message', 'Expense created');
+
+        return $this->redirectRoute('expenses.show', $expense, navigate: true);
     }
 
     public function mount()

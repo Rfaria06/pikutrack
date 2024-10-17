@@ -8,5 +8,6 @@
       "enabled" : true,
       "script" : "#!\/bin\/sh\ncomposer run dev"
     }
-  }
+  },
+  "buildBeforeRunning" : true
 }

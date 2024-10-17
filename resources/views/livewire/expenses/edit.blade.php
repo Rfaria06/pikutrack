@@ -7,7 +7,7 @@
         </label>
 
         <label class="input input-bordered w-full flex items-center gap-2">
-            Amount (Cents)
+            Amount
             <input wire:model="form.amount" type="number" step="0.01" class="grow" />
         </label>
 
