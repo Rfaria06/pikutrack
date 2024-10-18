@@ -35,5 +35,6 @@ window.setupEditor = function (content) {
                 editor.commands.setContent(content, false);
             });
         },
+        editor: editor,
     };
 };
