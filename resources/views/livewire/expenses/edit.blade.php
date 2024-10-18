@@ -25,6 +25,8 @@
 
         <textarea wire:model="form.description" class="textarea textarea-bordered w-full" placeholder="Description"></textarea>
 
+        <x-editor wire:model="form.description" />
+
         <button type="submit" class="btn btn-block btn-primary mb-4">Save</button>
         <a href="{{url()->previous()}}" wire:navigate class="btn btn-block">Cancel</a>
     </form>
