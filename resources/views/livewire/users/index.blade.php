@@ -1,6 +1,9 @@
 <div class="w-full">
     <h1 class="font-bold text-3xl mb-4">User Management</h1>
+
     <div class="divider"></div>
+
+    <livewire:users.create />
 
     <table class="table table-zebra">
         <thead>

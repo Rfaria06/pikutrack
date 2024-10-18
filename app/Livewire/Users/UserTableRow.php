@@ -36,7 +36,13 @@ class UserTableRow extends Component
             return;
         }
 
+        $name = $this->user->name;
+        $email = $this->user->email;
         $this->user->delete();
+
+        session()->flash('message', "$name <$email> deleted");
+
+        $this->redirectRoute('users', navigate: true);
     }
 
     public function mount(User $user)
