@@ -62,6 +62,11 @@ class User extends Authenticatable
         return $this->user_type === UserType::ADMIN;
     }
 
+    public function scopeAdmin($query)
+    {
+        return $query->where('user_type', UserType::ADMIN);
+    }
+
     public function expenses()
     {
         return $this->hasMany(Expense::class);

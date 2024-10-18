@@ -44,6 +44,17 @@ class Settings extends Component
         $this->redirectRoute('settings', navigate: true);
     }
 
+    public function deleteUser()
+    {
+        if (User::admin()->count() <= 1) {
+            session()->flash('message', 'There must be at least 1 admin');
+
+            return $this->redirectRoute('settings', navigate: true);
+        }
+
+        auth()->user()->delete();
+    }
+
     public function mount()
     {
         $this->user = auth()->user();

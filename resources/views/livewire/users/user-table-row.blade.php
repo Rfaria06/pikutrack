@@ -27,6 +27,8 @@
         </select>
     </td>
     <td>
-        <button wire:click="deleteUser" class="btn btn-warning" wire:confirm><i class="fa-solid fa-trash"></i></button>
+        <button wire:click="deleteUser" class="btn btn-warning" wire:confirm {{$this->is_self ? "disabled" : null}}>
+            <i class="fa-solid fa-trash"></i>
+        </button>
     </td>
 </tr>

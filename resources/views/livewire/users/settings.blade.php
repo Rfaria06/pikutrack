@@ -44,11 +44,19 @@
 
     <livewire:users.password-changer />
 
-    <div class="divider"></div>
+    <div class="divider">Sessions</div>
 
     <button wire:click="logout" class="btn btn-block btn-outline btn-secondary">
         <i class="fa-solid fa-door-open"></i>
         Logout
+        <span wire:loading class="loading loading-spinner"></span>
+    </button>
+
+    <div class="divider">Danger zone</div>
+
+    <button wire:click="deleteUser" wire:confirm class="btn btn-block btn-warning">
+        <i class="fa-solid fa-trash"></i>
+        Delete User
         <span wire:loading class="loading loading-spinner"></span>
     </button>
 

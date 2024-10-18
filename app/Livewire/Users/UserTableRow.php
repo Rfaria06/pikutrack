@@ -21,8 +21,12 @@ class UserTableRow extends Component
             return;
         }
 
+        session()->flash('message', 'User type saved');
+
         // Update the user type in the database
         $this->user->update(['user_type' => $value]);
+
+        $this->redirectRoute('users', navigate: true);
     }
 
     public function deleteUser()
